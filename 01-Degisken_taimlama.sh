@@ -1,4 +1,4 @@
-#!/bin/bash.mb
+#!/bin/bash
 #variables
 # furkan isler
 #2022/06/16
