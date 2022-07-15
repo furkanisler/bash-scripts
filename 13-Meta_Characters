@@ -1,0 +1,127 @@
+#!/bin/bash
+
+# Meta Characters
+# Furkan İşler
+# 2022/07/04
+
+# Meta karakter dediğimiz şeyler noktalı virgül, süslü parantez vs
+
+
+
+
+# Bu karakterlerin shell üzerinde nasıl kullanıldığına değiniyorum
+# Her bir karakter örneği istenirse tek tek shell üzerinde yazılıp denenebilir
+
+
+
+
+
+# İlk olarak noktalı virgül ile başlayalım
+
+echo "=======>>>>> NOKTALI VİRGÜL <<<<======="
+
+#Noktalı virgül ile komutları tek seferde peşpeşe yazarız
+
+# Mesela tek seferde ls pwd ve takvimi yazdıralım
+
+ls;pwd;cal
+
+# Bunu aynı zamanda && ile de yapabiliriz
+
+# önce pwd yapalım sonra takwim sonra ls
+pwd&&cal&&ls
+
+
+
+echo -e "\n\n\n\n"
+
+
+# * karakterine bakalım
+
+
+echo "=======>>>>>   *  KARAKTERİ    <<<<<======"
+
+echo
+echo
+
+# Dosya klasör isimlerinde hatırlamadığımız harfler yerine kullanabiliriz
+
+# Mesela ls u*  dediğimizde u harfi ile başlayan dosyaları sıralar
+
+ls u*
+
+echo -e "\n\n\n\n"
+
+
+# ? karakterine bakalım
+
+echo "=======>>>>>   ? KARAKTERİ  <<<<< ========"
+
+echo
+echo
+
+# Her bir soru işareti bir karakter demektir
+
+# Mesela ls ??? yaparsak 3 karekterden oluşan dosya ve klasörleri listeler
+
+ls ???
+
+echo -e "\n\n\n\n"
+
+# Köşeli parantez ile alakadar olalım
+
+echo "=======>>>>>   [] KÖŞELİ PARANTEZ   <<<<<======="
+echo -e "\n\n"
+
+# İstediğimiz karakterleri belirtmeye yarar. 
+# Mesela d veya e ile başlayan dosya ve kalsörleri listelemek istiyorsam aşağıdaki gibi yaparım
+
+ls [de]*
+
+#Yıldızın ne anlama geldiğini hatırla
+#d* yapsaydım d ile başlayanlar;
+#e* yapsaydım e ile başlayanlar sıralanırdı
+# [de]* yapınca d veya e ile başlayanlar sıralanıyor.
+echo -e "\n\n\n\n"
+
+
+echo "=======>>>>>    ^ SEMBOLÜ   <<<<<======="
+echo
+echo
+
+
+# Yukarıda d veya e ile başlayanları listelemiştik ya.
+# Bu sembol tam tersi oluyor.
+# Bunu kullanınca bununla başlamayanlar oluyor.
+
+ls [^a]*
+
+# Yukarıdaki komutta a ile başlamayan dosyalar listelenir
+
+echo -e "\n\n\n\n"
+
+
+
+echo "=======>>>>>    {} SÜSLÜ PARANTEZ    <<<<<======="
+
+echo
+echo
+
+# Matematikte dağılma işlemi yapıyoruz ya aynı onun gibi kullanılabilir
+
+# Mesela 3 farklı isme selam nasılsın yazdıralım
+
+echo selam\ {ayşe,fatma,hayriye}\ nasılsın
+
+# BUnu kullanırken boşluk kullanırsan çalışmaz
+
+#İlla boşluk kullanacaksan \ kullanıp arkasına boşluk girmen gerekli.
+
+# Bu işareti birden çok dosya oluştururken de kullanabilirsin.
+
+# Dosyaları oluşturmamak için yorum satırında yazıyorum.
+
+# touch dosya{1..10}.txt
+
+# Üstteki komutu girdiğinde
+# dosya1.txt dosya2.txt şeklinde devam eden 10 tane dosya oluşur.
